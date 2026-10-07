@@ -8,15 +8,16 @@ public class Atm
 	     // 2. Create a Scanner object to read console input
 		 Scanner scanner = new Scanner(System.in);
 		 String name="";
+		 String designation="";
 		 int age=0;
-		 double salary = 50000;
+		 double salP = 25000,salT =20000,salM = 30000;
 		 int choice;
 		 do
 		 {
 			 System.out.println("\n----ATM Menu Options----");
 			 System.out.println("1.Create");
 			 System.out.println("2.Display");
-			 System.out.println("3.Rise salary");
+			 System.out.println("3.Raise salary");
 			 System.out.println("4.Exit");
 			 System.out.print("Enter your choice:");
 			 
@@ -39,6 +40,9 @@ public class Atm
 	            age = scanner.nextInt();
 	            scanner.nextLine();
 	            
+	            System.out.println("Enter your designation:");
+	            designation = scanner.nextLine();
+	            
 	            System.out.print("Do you want to continue?(Yes/No):");
 	            answer = scanner.nextLine();
 	           
@@ -48,12 +52,44 @@ public class Atm
 				 System.out.println("----Details are displayed------");
 				 System.out.println("Name:"+name);
 			     System.out.println("Age:"+age);
+			     System.out.println("Designation:"+designation);
+			     if(designation.equals("Programmer"))
+			     {
+			    	 System.out.println("Salary:"+salP);
+			     }
+			     else if(designation.equals("Tester"))
+			     {
+			    	 System.out.println("Salary:"+salT);
+			     }
+			     else if(designation.equals("Manager"))
+			     {
+			    	 System.out.println("Salary:"+salM);
+			     }
+			     else
+			     {
+			    	 System.out.println("Salary:Not available");
+			     }
 	            break;
 			 case 3:
 	            System.out.print("Enter salary increase amount:");
 	            double increase = scanner.nextDouble();
-	            salary = salary + increase;
-	            System.out.println("Salary is updated.\nUpdated Salary:" +salary);
+	            salP = salP + increase;
+	            salT = salT + increase;
+	            salM = salM + increase;
+	            System.out.println("Salary is updated.");
+	            if(designation.equals("Programmer"))
+	            {
+	            	System.out.println(" Updated Salary:"+salP);
+	            }
+	            else if(designation.equals("Tester"))
+			     {
+			    	 System.out.println("Updated Salary:"+salT);
+			     }
+			     else if(designation.equals("Manager"))
+			     {
+			    	 System.out.println("Updated Salary:"+salM);
+			     }
+	            
 	            break;
 	        case 4:
 	            System.out.println("Exiting!....");
