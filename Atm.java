@@ -35,10 +35,18 @@ public class Atm
 				{
 	            System.out.print("Enter your Name:");
 	            name = scanner.nextLine();
-	            
-	            System.out.print("Enter your Age:");
+	            while (true)
+	            {
+	            System.out.print("Enter your Age(18-60):");
 	            age = scanner.nextInt();
 	            scanner.nextLine();
+	            if(age>=18 && age<=60)
+	            {
+	            	break;
+	            }
+	            
+	            	System.out.println("Invalid age!");
+	            }
 	            
 	            System.out.println("Enter your designation:");
 	            designation = scanner.nextLine();
